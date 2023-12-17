@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js" integrity="sha512-j+F4W//4Pu39at5I8HC8q2l1BNz4OF3ju39HyWeqKQagW6ww3ZF9gFcu8rzUbyTDY7gEo/vqqzGte0UPpo65QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", async () => {
             AOS.init({
                 once: true,
                 anchorPlacement: 'bottom-top',
@@ -22,11 +22,17 @@
                 container: '.tiny-slider',
                 controlsContainer: ".tiny-slider-control",
                 navContainer: ".tiny-slider-nav",
+                mode: 'gallery',
                 items: 1,
                 slideBy: 'page',
                 autoplay: true,
                 autoplayButtonOutput: false,
                 autoplayHoverPause: true,
+                autoplayTimeout: 3000,
+                speed: 800,
+            });
+            document.querySelector(".tiny-slider").addEventListener("mouseleave", function () {
+                slider.play();
             });
             const slider2 = tns({
                 container: '.tiny-slider-2',
@@ -39,6 +45,9 @@
                 autoplayButtonOutput: false,
                 autoplayHoverPause: true,
                 speed: 800,
+            });
+            document.querySelector(".tiny-slider-2").addEventListener("mouseleave", function () {
+                slider2.play();
             });
         });
     </script>
@@ -70,21 +79,21 @@
         <div class="relative">
             <div class="tiny-slider max-h-screen h-[800px]">
                 <div class="relative h-full">
-                    <img class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1446694292248-2c2a7e575b1b" alt="">
+                    <img class="absolute inset-0 w-full h-full object-cover" src="/images/slide1.jpg" alt="">
                     <a href="#" class="block relative h-full hover:pb-10 flex justify-center items-center transition-all duration-500 bg-gradient-to-t from-[rgba(0,0,50,.7)] to-[rgba(0,0,50,.3)]">
-                        <h3 class="text-3xl py-2 text-center h-full flex justify-center items-center text-white">Hash Brown and Bacon Omelet Cups</h3>
+                        <h3 class="text-3xl py-2 text-center h-full flex justify-center items-center text-white"></h3>
                     </a>
                 </div>
                 <div class="relative h-full">
-                    <img class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1446694292248-2c2a7e575b1b" alt="">
+                    <img class="absolute inset-0 w-full h-full object-cover" src="/images/slide2.jpg" alt="">
                     <a href="#" class="block relative h-full hover:pb-10 flex justify-center items-center transition-all duration-500 bg-gradient-to-t from-[rgba(0,0,50,.7)] to-[rgba(0,0,50,.3)]">
-                        <h3 class="text-3xl py-2 text-center h-full flex justify-center items-center text-white">Hash Brown and Bacon Omelet Cups</h3>
+                        <h3 class="text-3xl py-2 text-center h-full flex justify-center items-center text-white"></h3>
                     </a>
                 </div>
                 <div class="relative h-full">
-                    <img class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1446694292248-2c2a7e575b1b" alt="">
+                    <img class="absolute inset-0 w-full h-full object-cover" src="/images/slide3.jpg" alt="">
                     <a href="#" class="block relative h-full hover:pb-10 flex justify-center items-center transition-all duration-500 bg-gradient-to-t from-[rgba(0,0,50,.7)] to-[rgba(0,0,50,.3)]">
-                        <h3 class="text-3xl py-2 text-center h-full flex justify-center items-center text-white">Hash Brown and Bacon Omelet Cups</h3>
+                        <h3 class="text-3xl py-2 text-center h-full flex justify-center items-center text-white"></h3>
                     </a>
                 </div>
             </div>
