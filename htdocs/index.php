@@ -69,8 +69,8 @@
                     <li class="group active"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="#">Accueil</a></li>
                     <li class="group"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="#services">Services</a></li>
                     <li class="group"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="#top-routes">Voyageurs</a></li>
-                    <li class="group"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="/">Touristique</a></li>
-                    <li class="group"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="/">Messagerie</a></li>
+                    <li class="group"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="#">Touristique</a></li>
+                    <li class="group"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="#">Messagerie</a></li>
                 </ul>
             </div>
         </nav>
@@ -199,7 +199,7 @@
         <div class="grid sm:grid-cols-3 max-w-screen-xl mx-auto gap-16 py-16 text-white">
             <div>
                 <img class="block mx-auto h-12 mb-5" src="" alt="">
-                <p class="font-semibold py-2">Pullman du sud est une société de transport spécialisée dans le transport interurbain de voyageurs, le transport touristique et messagerie.</p>
+                <p class="font-semibold py-2">C'est une société de transport spécialisée dans le transport interurbain de voyageurs, le transport touristique et messagerie.</p>
             </div>
             <div>
                 <h4 class="underline text-2xl font-bold">Liens Utiles</h4>
@@ -242,7 +242,7 @@
         <div class="border-t border-white">
             <div class="flex py-5 max-w-screen-xl mx-auto text-white leading-9">
                 <div>© Copyright © 2021-2022 **** | All Rights Reserved.</div>
-                <div class="ml-auto">Designed by <a class="inline-block ml-1 px-2 rounded bg-rose-800 hover:bg-rose-700 active:bg-rose-800" href="/">Hamza</a></div>
+                <div class="ml-auto">Designed by <a class="inline-block ml-1 px-2 rounded bg-rose-800 hover:bg-rose-700 active:bg-rose-800" href="#">Hamza</a></div>
             </div>
         </div>
     </footer>
