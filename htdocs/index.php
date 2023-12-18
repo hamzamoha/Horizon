@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.min.css" integrity="sha512-06CZo7raVnbbD3BlY8/hGUoUCuhk8sTdVGV3m3nuh9i2R+UmkLbLRTE/My8TuJ3ALbDulhBObJQWtOUt0mXzNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js" integrity="sha512-j+F4W//4Pu39at5I8HC8q2l1BNz4OF3ju39HyWeqKQagW6ww3ZF9gFcu8rzUbyTDY7gEo/vqqzGte0UPpo65QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js" integrity="sha512-j+F4W//4Pu39at5I8HC8q2l1BNz4OF3ju39HyWeqKQagW6ww3ZF9gFcu8rzUbyTDY7gEo/vqqzGte0UPpo65QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/plain-js-slidetoggle/slideToggle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", async () => {
             AOS.init({
                 once: true,
                 anchorPlacement: 'bottom-top',
-                duration: 1000,
-            });
+                duration: 1000
+            })
             const slider = tns({
                 container: '.tiny-slider',
                 controlsContainer: ".tiny-slider-control",
@@ -29,33 +30,57 @@
                 autoplayButtonOutput: false,
                 autoplayHoverPause: true,
                 autoplayTimeout: 3000,
-                speed: 800,
-            });
-            document.querySelector(".tiny-slider").addEventListener("mouseleave", function () {
-                slider.play();
-            });
+                speed: 800
+            })
             const slider2 = tns({
                 container: '.tiny-slider-2',
                 controlsContainer: ".tiny-slider-control-2",
                 nav: false,
-                items: 3,
-                slideBy: 1,
+                items: 2,
                 gutter: 10,
                 autoplay: true,
                 autoplayButtonOutput: false,
                 autoplayHoverPause: true,
                 speed: 800,
-            });
+                center: true,
+                responsive: {
+                    800: {
+                        center: true,
+                        items: 3
+                    },
+                    1000: {
+                        center: true,
+                        items: 4
+                    }
+                }
+            })
             document.querySelector(".tiny-slider-2").addEventListener("mouseleave", function () {
-                slider2.play();
-            });
-        });
+                slider2.play()
+            })
+            document.querySelector(".tiny-slider").addEventListener("mouseleave", function () {
+                slider.play()
+            })
+            document.querySelector(".tiny-slider-2").addEventListener("click", function () {
+                slider2.play()
+            })
+            document.querySelector(".tiny-slider").addEventListener("click", function () {
+                slider.play()
+            })
+            window.addEventListener("resize", function (event) {
+                if(window.innerWidth >= 768){
+                    document.querySelector('#mobile-menu').slideUp()
+                }
+            })
+            document.querySelector('#mobile-menu').addEventListener("click", function () {
+                document.querySelector('#mobile-menu').slideUp()
+            })
+        })
     </script>
 </head>
 
 <body>
     <div class="bg-blue-800">
-        <ul class="max-w-screen-2xl mx-auto flex text-white py-3">
+        <ul class="max-w-screen-2xl mx-auto flex text-white py-3 px-1">
             <li class="mr-8"><i class="fa-solid fa-location-dot"></i> 80000, Agadir, Morocco</li>
             <li><a href="mailto:"><i class="fa-solid fa-envelope"></i> ss@ss.com</a></li>
             <li class="ml-auto"><a href="/"><i class="fa-brands fa-facebook-f"></i> facebook/test</a></li>
@@ -65,13 +90,23 @@
         <nav id="top-nav" class="bg-white">
             <div class="max-w-screen-2xl mx-auto flex py-5 items-center">
                 <img class="mr-auto" src="" alt="">
-                <ul class="flex overflow-auto">
+                <ul class="hidden md:flex overflow-auto">
                     <li class="group active"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="#">Accueil</a></li>
                     <li class="group"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="#services">Services</a></li>
                     <li class="group"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="#top-routes">Voyageurs</a></li>
                     <li class="group"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="#">Touristique</a></li>
                     <li class="group"><a class="block font-medium py-3 px-5 rounded-lg group-[.active]:font-bold group-[.active]:text-white group-[.active]:bg-rose-800 group-[:not(.active)]:hover:bg-neutral-200 mx-1 group-[:not(.active)]:text-blue-800" href="#">Messagerie</a></li>
                 </ul>
+                <div class="md:hidden absolute top-full right-0 w-full">
+                    <ul id="mobile-menu" class="hidden w-full bg-neutral-200">
+                        <li class="group"><a class="block font-medium py-3.5 px-5 rounded-lg mx-1 text-blue-800" href="#">Accueil</a></li>
+                        <li class="group"><a class="block font-medium py-3.5 px-5 rounded-lg mx-1 text-blue-800" href="#services">Services</a></li>
+                        <li class="group"><a class="block font-medium py-3.5 px-5 rounded-lg mx-1 text-blue-800" href="#top-routes">Voyageurs</a></li>
+                        <li class="group"><a class="block font-medium py-3.5 px-5 rounded-lg mx-1 text-blue-800" href="#">Touristique</a></li>
+                        <li class="group"><a class="block font-medium py-3.5 px-5 rounded-lg mx-1 text-blue-800" href="#">Messagerie</a></li>
+                    </ul>
+                </div>
+                <button onclick="document.querySelector('#mobile-menu').slideToggle()" class="flex h-12 w-12 justify-center items-center text-center md:hidden rounded bg-slate-200 mr-5" type="button"><i class="fa-solid fa-bars"></i></button>
             </div>
         </nav>
     </header>
@@ -196,14 +231,14 @@
         </div>
     </section>
     <footer class="bg-blue-800">
-        <div class="grid sm:grid-cols-3 max-w-screen-xl mx-auto gap-16 py-16 text-white">
-            <div>
+        <div class="grid sm:grid-cols-3 max-w-screen-xl mx-auto md:gap-2 gap-10 lg:gap-16 py-6 sm:py-10 md:py-16 text-white">
+            <div class="text-center sm:text-left">
                 <img class="block mx-auto h-12 mb-5" src="" alt="">
-                <p class="font-semibold py-2">C'est une société de transport spécialisée dans le transport interurbain de voyageurs, le transport touristique et messagerie.</p>
+                <p class="font-semibold py-2 px-1">C'est une société de transport spécialisée dans le transport interurbain de voyageurs, le transport touristique et messagerie.</p>
             </div>
-            <div>
+            <div class="text-center sm:text-left">
                 <h4 class="underline text-2xl font-bold">Liens Utiles</h4>
-                <ul class="py-5">
+                <ul class="py-5 px-1">
                     <li class="py-2">
                         <a href="/"><i class="fa-solid fa-caret-right"></i> Accueil</a>
                     </li>
@@ -221,9 +256,9 @@
                     </li>
                 </ul>
             </div>
-            <div>
+            <div class="text-center sm:text-left">
                 <h4 class="underline text-2xl font-bold">Besoin D'aide</h4>
-                <ul class="py-5">
+                <ul class="py-5 px-1">
                     <li class="py-2">
                         <i class="fa-solid fa-location-dot w-10 text-xl text-center"></i> 80000, Agadir, Morocco
                     </li>
@@ -240,9 +275,9 @@
             </div>
         </div>
         <div class="border-t border-white">
-            <div class="flex py-5 max-w-screen-xl mx-auto text-white leading-9">
-                <div>© Copyright © 2021-2022 **** | All Rights Reserved.</div>
-                <div class="ml-auto">Designed by <a class="inline-block ml-1 px-2 rounded bg-rose-800 hover:bg-rose-700 active:bg-rose-800" href="#">Hamza</a></div>
+            <div class="flex flex-wrap sm:flex-nowrap sm:justify-normal justify-center py-2 sm:py-3.5 md:py-5 max-w-screen-xl mx-auto text-white leading-9 px-1">
+                <div>© Copyright 2023 | Tous Droits Réservés.</div>
+                <div class="mx-auto sm:my-0 sm:mr-0 sm:ml-auto">Designed by <a class="inline-block ml-1 px-2 rounded bg-rose-800 hover:bg-rose-700 active:bg-rose-800" href="#">/Dev</a></div>
             </div>
         </div>
     </footer>
